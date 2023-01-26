@@ -1,0 +1,137 @@
+{
+    "menu":[
+        {
+            "Appetizers": [
+                {
+                    "OrderNo": "avd1434",
+                    "Name":"Soup1",
+                    "Price": "$5",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avd14dfdf34",
+                    "Name":"Soup2",
+                    "Price": "$6",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avered1434",
+                    "Name":"Soup3",
+                    "Price": "$4",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                }
+            ],
+            "Side Dishes": [
+                {
+                    "OrderNo": "avd14fdf34",
+                    "Name":"Mash Potato",
+                    "Price": "$5",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avd14dfdfdfd34",
+                    "Name":"Side Dihs 2",
+                    "Price": "$6",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avered1fd434",
+                    "Name":"Side Dihs 3",
+                    "Price": "$4",
+                    "Availability": 10,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                }
+            ],
+            "Main Dish": [
+                {
+                    "OrderNo": "dfdf",
+                    "Name":"Dish 1",
+                    "Price": "$5",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avfdfdhbd14dfdfdfd34",
+                    "Name":"Dish4",
+                    "Price": "$6",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "aveafgvred1fd434",
+                    "Name":"Dish5",
+                    "Price": "$4",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                }
+            ],
+            "Drinks and Beverages": [
+                {
+                    "OrderNo": "d35343dfdf",
+                    "Name":"Tequila",
+                    "Price": "$5",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avfdfdbvfdhbd14dfdfdfd34",
+                    "Name":"Vodka",
+                    "Price": "$6",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "aveafgvred1fd434",
+                    "Name":"Red Wine",
+                    "Price": "$4",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                }
+            ],
+            "Dessert": [
+                {
+                    "OrderNo": "d35343dfdf",
+                    "Name":"Tequila",
+                    "Price": "$5",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "avfdfdbvfdhbd14dfdfdfd34",
+                    "Name":"Vodka",
+                    "Price": "$6",
+                    "Availability": 1,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                },
+                {
+                    "OrderNo": "aveafgvred1fd434",
+                    "Name":"Red Wine",
+                    "Price": "$4",
+                    "Availability": 0,
+                    "Purchase Rate": 12.3,
+                    "Rating":3
+                }
+            ]
+
+        }
+    ]
+}

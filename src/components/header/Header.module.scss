@@ -1,0 +1,16 @@
+@import '../../styles/fonts.scss';
+.header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    font-family: PingFangSC;
+    outline: solid red;
+    flex: 1 0 auto;
+
+    p{
+        
+        width: 100%;
+        background: blue;
+    }
+}

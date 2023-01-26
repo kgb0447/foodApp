@@ -1,0 +1,10 @@
+@import '../../../styles/mixins.scss';
+
+.categories{
+    position: relative;
+    width: 96%;
+    height: 102px;
+    margin: auto;
+    @include flexNoShrink;
+    outline: inset green 1px;
+}
