@@ -1,7 +1,7 @@
 {
-  "menu": [
+  "menu": 
     {
-      "appetizers": [
+      "appetizers":  [
         {
           "orderNo": "avd1434",
           "name": "Soup1",
@@ -27,9 +27,7 @@
           "purchaseRate": 12.3,
           "rating": 3
         }
-      ]
-    },
-    {
+      ],
       "sideDish": [
         {
           "orderNo": "avd14fdf34",
@@ -55,9 +53,7 @@
           "purchaseRate": 12.3,
           "rating": 3
         }
-      ]
-    },
-    {
+      ],
       "mainDish": [
         {
           "orderNo": "dfdf",
@@ -83,9 +79,7 @@
           "purchaseRate": 12.3,
           "rating": 3
         }
-      ]
-    },
-    {
+      ],
       "drinksAndBeverages": [
         {
           "orderNo": "d35343dfdf",
@@ -111,9 +105,7 @@
           "purchaseRate": 12.3,
           "rating": 3
         }
-      ]
-    },
-    {
+      ],
       "dessert": [
         {
           "orderNo": "d35343dfdf",
@@ -140,6 +132,5 @@
           "rating": 3
         }
       ]
-    }
-  ]
+  }
 }

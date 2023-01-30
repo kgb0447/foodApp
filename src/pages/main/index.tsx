@@ -2,6 +2,7 @@ import {useReducer,useEffect} from 'react'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import Categories from '../../components/navigation/categories'
+import HorizontalSwiper from '../../components/swiper/horizontal/HorizontalSwiper'
 import styles from './styles.module.scss'
 
 
@@ -16,6 +17,7 @@ export default function MainPage() {
         </div>
        
         <Categories/>
+        <HorizontalSwiper/>
         <Footer/>
     </div>
   )

@@ -1,0 +1,53 @@
+@import '../../../styles/fonts.scss';
+@import '../../../styles/functions.scss';
+.swiperContainer{
+    position: relative;
+    margin-top: size(20);
+    // margin-left: size(30);
+    width: 100vw;
+    height: size(380);
+    background: red;
+    padding: 0;
+
+    .swiperHeader{
+        position: absolute;
+        top: 0;
+        padding: 0 size(8);
+        height: size(26);
+        display: flex;
+        justify-content: space-between;
+        background: orange;
+    }
+
+    .swiper{
+        margin-top: size(10);
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 100%;
+        height:size(343);
+        background: yellow;
+        overflow-y: scroll;
+
+        .swiperItems{
+            position: relative;
+            width: size(343);
+            height: size(300);
+            background: rgb(104, 102, 102);
+            flex-shrink: 0;
+            border-radius: size(20);
+            margin-right: size(20);
+
+            .itemLabel{
+                position: absolute;
+                bottom: size(20);
+                left: size(20);
+                width: size(268);
+                height: size(102);
+                background: rgb(134, 132, 132);
+                border-radius: size(20);
+
+            }
+        }
+    }
+}
