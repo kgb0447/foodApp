@@ -1,136 +1,207 @@
 {
-  "menu": 
+  "menu": [
     {
-      "appetizers":  [
+      "category" : "Appetizers",
+      "menuList" : [
         {
           "orderNo": "avd1434",
           "name": "Soup1",
-          "price": "$5",
+          "price": 5,
           "availability": 1,
           "purchaseRate": 12.3,
           "rating": 3,
           "img": "./logo512.png"
         },
         {
-          "orderNo": "avd14dfdf34",
+          "orderNo": "avd1434",
           "name": "Soup2",
-          "price": "$6",
-          "availability": 0,
+          "price": 4,
+          "availability": 1,
           "purchaseRate": 12.3,
-          "rating": 3
+          "rating": 3,
+          "img": "./logo512.png"
         },
         {
-          "orderNo": "avered1434",
+          "orderNo": "avd1434",
           "name": "Soup3",
-          "price": "$4",
+          "price":5,
           "availability": 1,
           "purchaseRate": 12.3,
-          "rating": 3
-        }
-      ],
-      "sideDish": [
+          "rating": 3,
+          "img": "./logo512.png"
+        },
         {
-          "orderNo": "avd14fdf34",
-          "name": "Mash Potato",
-          "price": "$5",
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price":6,
           "availability": 1,
           "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "avd14dfdfdfd34",
-          "name": "Side Dihs 2",
-          "price": "$6",
-          "availability": 0,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "avered1fd434",
-          "name": "Side Dihs 3",
-          "price": "$4",
-          "availability": 10,
-          "purchaseRate": 12.3,
-          "rating": 3
-        }
-      ],
-      "mainDish": [
-        {
-          "orderNo": "dfdf",
-          "name": "Dish 1",
-          "price": "$5",
-          "availability": 1,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "avfdfdhbd14dfdfdfd34",
-          "name": "Dish4",
-          "price": "$6",
-          "availability": 0,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "aveafgvred1fd434",
-          "name": "Dish5",
-          "price": "$4",
-          "availability": 0,
-          "purchaseRate": 12.3,
-          "rating": 3
-        }
-      ],
-      "drinksAndBeverages": [
-        {
-          "orderNo": "d35343dfdf",
-          "name": "Tequila",
-          "price": "$5",
-          "availability": 1,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "avfdfdbvfdhbd14dfdfdfd34",
-          "name": "Vodka",
-          "price": "$6",
-          "availability": 1,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "aveafgvred1fd434",
-          "name": "Red Wine",
-          "price": "$4",
-          "availability": 0,
-          "purchaseRate": 12.3,
-          "rating": 3
-        }
-      ],
-      "dessert": [
-        {
-          "orderNo": "d35343dfdf",
-          "name": "Tequila",
-          "price": "$5",
-          "availability": 1,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "avfdfdbvfdhbd14dfdfdfd34",
-          "name": "Vodka",
-          "price": "$6",
-          "availability": 1,
-          "purchaseRate": 12.3,
-          "rating": 3
-        },
-        {
-          "orderNo": "aveafgvred1fd434",
-          "name": "Red Wine",
-          "price": "$4",
-          "availability": 0,
-          "purchaseRate": 12.3,
-          "rating": 3
+          "rating": 3,
+          "img": "./logo512.png"
         }
       ]
-  }
+    },
+    {
+      "category" : "Side Dish",
+      "menuList" : [
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 5,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 2,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 4,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 7,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        }
+      ]
+    },
+    {
+      "category" : "Main Dish",
+      "menuList" : [
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 6,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 9,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 7,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 5,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        }
+      ]
+    },
+    {
+      "category" : "Drinks and Beverages",
+      "menuList" : [
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price":6,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 5,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 8,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price":12,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        }
+      ]
+    },
+    {
+      "category" : "Desserts",
+      "menuList" : [
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 4,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 3,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 5,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        },
+        {
+          "orderNo": "avd1434",
+          "name": "Soup1",
+          "price": 5,
+          "availability": 1,
+          "purchaseRate": 12.3,
+          "rating": 3,
+          "img": "./logo512.png"
+        }
+      ]
+    }
+  ]
 }
+
+
