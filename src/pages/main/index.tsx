@@ -3,10 +3,16 @@ import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import Categories from '../../components/navigation/categories'
 import HorizontalSwiper from '../../components/swiper/horizontal/HorizontalSwiper'
+import { RootState } from '../../store/store'
+import { useAppSelector } from '../../utils/hooks/redux/hooks'
 import styles from './styles.module.scss'
 
 
+
 export default function MainPage() {
+  const menuList = useAppSelector((state:RootState) => state.mapperReducer.menuList);
+
+  console.log("menuList",menuList)
 
   return (
     <div className={styles.mainPage}>      
@@ -17,7 +23,7 @@ export default function MainPage() {
         </div>
        
         <Categories/>
-        <HorizontalSwiper/>
+        <HorizontalSwiper swiperItems={menuList}/>
         <Footer/>
     </div>
   )

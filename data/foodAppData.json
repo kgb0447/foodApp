@@ -10,7 +10,7 @@
           "availability": 1,
           "purchaseRate": 12.3,
           "rating": 3,
-          "img": "./logo512.png"
+          "img": "./APIAssets/img/fruit_salad@3x.png"
         },
         {
           "orderNo": "avd1434",
@@ -19,7 +19,8 @@
           "availability": 1,
           "purchaseRate": 12.3,
           "rating": 3,
-          "img": "./logo512.png"
+          "img": "./logo.png"
+          
         },
         {
           "orderNo": "avd1434",
@@ -37,7 +38,7 @@
           "availability": 1,
           "purchaseRate": 12.3,
           "rating": 3,
-          "img": "./logo512.png"
+          "img": "./hahaha.png"
         }
       ]
     },

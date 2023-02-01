@@ -7,24 +7,33 @@
     height: size(102);
     margin: auto;
     @include flexNoShrink;
-    justify-content: space-evenly;
-    outline: inset green 1px;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-grow: 0;
+    overflow-x: scroll;
     
     
     .categoryItems{
+        margin-right: size(20);
         width: size(74);
         height: size(102);
         text-align: center;
         outline: inset red 1px;
+
+        &:last-child{
+            margin-right: 0;
+        }
 
         img{
             width: size(74);
             height: size(74);
         }
         p{
-         background: yellow;
-         margin-top: size(-4);
+          
+            margin-top: size(-4);
+            font-size: size(10);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

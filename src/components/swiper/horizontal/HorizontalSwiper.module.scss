@@ -31,9 +31,8 @@
 
         .swiperItems{
             position: relative;
-            width: size(343);
-            height: size(300);
-            background: rgb(104, 102, 102);
+            width: size(300);
+            height: size(324);
             flex-shrink: 0;
             border-radius: size(20);
             margin-right: size(20);
@@ -47,6 +46,11 @@
                 background: rgb(134, 132, 132);
                 border-radius: size(20);
 
+            }
+
+            img{
+               position: absolute;
+                width: 100px;
             }
         }
     }
