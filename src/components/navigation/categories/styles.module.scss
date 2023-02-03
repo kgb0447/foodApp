@@ -1,39 +1,44 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/functions.scss';
+@import '../../../styles/variables.scss';
 
 .categories{
     position: relative;
     width: size(344);
     height: size(102);
-    margin: auto;
+    margin: size(10) auto;
     @include flexNoShrink;
     justify-content: flex-start;
     flex-grow: 0;
     overflow-x: scroll;
+   
     
     
     .categoryItems{
-        margin-right: size(20);
-        width: size(74);
-        height: size(102);
+        margin-right: size(16);
+        width: size(59);
+        height: size(98);
         text-align: center;
-        outline: inset red 1px;
+        border-radius: size(100);
+        background-color: $theme_color_normal;
+        // backdrop-filter: drop-shadow(0px 20px 30px rgba(254, 115, 76, 0.3));
+        flex-shrink: 0;
+
+            &:active{
+                background-color: $main_theme_color;
+            }
 
         &:last-child{
             margin-right: 0;
         }
 
         img{
-            width: size(74);
-            height: size(74);
+            width: size(60);
+            height: size(60);
         }
         p{
-          
-            margin-top: size(-4);
-            font-size: size(10);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: $gray_text;
+            font-size: size(11);
         }
     }
 }

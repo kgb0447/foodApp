@@ -29,14 +29,15 @@ export default function Categories() {
   // const prices =  res.map((item:any)=> item.map((val:any)=> val));
 
   // const lowestPrice = prices.sort((a:any,b:any)=> a.price - b.price).slice(0,2);
-
+  // console.log(category.toLowerCase(),"category")
   return (
-    <div className={styles.categories}>
+    <div className={styles.categories} style={{background:``}}>
       {
         category.map((item:string,index:number) => (
           <div className={styles.categoryItems} key={item+index}>
-            <img src={require('../../../assets/img/logo.png')} alt="" />
-            <p>{item}</p>
+            <img src={require(`../../../assets/img/category/${item.toLowerCase()}_icon@2x.png`) } alt="" />
+            
+            <p>{item.toLowerCase()}</p>
           </div>
         ))
       }

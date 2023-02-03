@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "category" : "Appetizers",
+      "category" : "Burger",
       "menuList" : [
         {
           "orderNo": "avd1434",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "category" : "Side Dish",
+      "category" : "Donut",
       "menuList" : [
         {
           "orderNo": "avd1434",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "category" : "Main Dish",
+      "category" : "Pizza",
       "menuList" : [
         {
           "orderNo": "avd1434",
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "category" : "Drinks and Beverages",
+      "category" : "Hotdog",
       "menuList" : [
         {
           "orderNo": "avd1434",
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "category" : "Desserts",
+      "category" : "Sandwich",
       "menuList" : [
         {
           "orderNo": "avd1434",
