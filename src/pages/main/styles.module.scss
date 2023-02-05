@@ -1,21 +1,15 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
 
 .mainPage{
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     .greetings{
-        outline: solid red;
+        color: $greeter_font_color;
         padding: 0 size(8);
-        h1{
-            font-size: size(28);
-            font-weight: 600;
-        }
-        p{
-            font-size: size(14);
-            font-weight: 400;
-        }
-        
+        font-weight: 700;
+        font-size: size(30);
     }
 }

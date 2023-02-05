@@ -6,7 +6,7 @@
     position: relative;
     width: size(344);
     height: size(102);
-    margin: size(10) auto;
+    margin: auto;
     @include flexNoShrink;
     justify-content: flex-start;
     flex-grow: 0;

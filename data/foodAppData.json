@@ -10,7 +10,11 @@
           "availability": 1,
           "purchaseRate": 12.3,
           "rating": 3,
-          "img": "./APIAssets/img/fruit_salad@3x.png"
+          "deliveryFee": 0,
+          "deliveryTime":10,
+          "restaurant": "McDonalds",
+          "img": "./APIAssets/img/fruit_salad@3x.png",
+          "categories": ["Burger","Chicken","Fast Food"]
         },
         {
           "orderNo": "avd1434",

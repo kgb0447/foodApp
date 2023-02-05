@@ -8,8 +8,13 @@ interface headerTypes {
 export default function Header({userInfo}: headerTypes) {
   return (
     <header className={styles.header}>
-       <p>{userInfo}</p>
-       <IoMdNotificationsOutline className={styles.notif}/>
+      <span className={styles.userIcon}>
+        <img src={require('../../assets/img/icons/hamburger_icon@2x.png')} alt="" />
+      </span>
+      <p>{userInfo}</p>
+      <div className={styles.userCard}>
+        <img src={require('../../assets/img/user/avatar1@2x.png')} alt="" />
+      </div>
     </header>
   )
 }

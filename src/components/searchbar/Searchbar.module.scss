@@ -1,0 +1,40 @@
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+
+.searchBarContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: size(52);
+    
+    .searchbar{
+        padding: 0 size(5) 0 size(22);
+        width: size(256);
+        height: 100%;
+        background: url('../../assets/img/filter/searchbar_bg@2x.png') center center;
+        background-repeat: no-repeat;
+        background-size: size(206) size(14);
+        font-size: size(14);
+        margin-right: size(20);
+        border: 1px solid #EFEFEF;
+        border-radius: size(10);
+    }
+
+    .filter{
+        position: relative;
+        width: size(51);
+        height: size(51);
+        border-radius: size(12);
+        outline: solid red 1px;
+        
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: size(18);
+            height: size(18);
+            object-fit: contain ;
+        }
+    }
+}

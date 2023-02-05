@@ -9,10 +9,10 @@ interface HorizontalSwiperTypes{
 export default function HorizontalSwiper({swiperItems}: HorizontalSwiperTypes) {
  console.log("swiperItems",swiperItems.length);
   return (
-    <div className={styles.swiperContainer}>'
+    <div className={styles.swiperContainer}>
         <header className={styles.swiperHeader}>
-            <h1>Today's Promo</h1>
-            <div>See All</div>
+            <h1>Featured Restaurants</h1>
+            <div className={styles.more}>View All</div>
         </header>
         <div className={styles.swiper}>
 
@@ -21,11 +21,16 @@ export default function HorizontalSwiper({swiperItems}: HorizontalSwiperTypes) {
               swiperItems.map((item:any) => (
                 item.map((val:any, index: number) => (
                   <div className={styles.swiperItems} 
-                  key={val?.orderNo + index}
-                  style={{background:`url(${val.img})`, backgroundSize: 'cover'}}
-                  >
-                    <div className={styles.itemLabel}>{val.name}</div>
-                   
+                  key={val?.orderNo + index}>
+                    <img src={val?.img} alt={""} />
+                    {/* <div className={styles.itemLabel}>{val.name}</div> */}
+                    <div className={styles.rateWrapper}>
+                      <div className={styles.rate}>4.5</div>
+                      <span>25+</span>
+                    </div>
+                    <div className={styles.likeFood}>
+                      <img src={require('../../../assets/img/cards/heart_icon@2x.png')} alt="" />
+                    </div>
                   </div>
                 ))
               ))
