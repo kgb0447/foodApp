@@ -4,10 +4,10 @@
 
 .swiperContainer{
     position: relative;
-    // margin-left: size(30);
+    margin-bottom: size(10);
     width: 100vw;
-    height: size(380);
     padding: 0;
+    outline: inset red 2px;
 
     .swiperHeader{
         width: 100%;

@@ -1,0 +1,163 @@
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+.sidebarContainer{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.492);
+    z-index: 10;
+    top: 0;
+    left: 0;
+   
+    
+    .sidebar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: size(200);
+        height: 100%;
+        background: #ffffff;
+
+        .test{
+            width: 100px;
+            height: 100px; 
+            border: solid red 1px;   
+            
+            &.actives{
+                background: red;
+                transform: rotate(350deg);
+                transition: 4s;
+            }
+            &.normal{
+                background: green;
+            }
+        }
+
+       &.active{
+            margin-left: size(-200);
+            z-index: 20;
+            animation: slideRightActive 0.6s forwards;
+
+            @keyframes slideRightActive {
+                from { margin-left: size(-200)};
+                to { margin-left: size(0)}
+            }
+        }
+
+        &.inactive{
+            margin-left: size(0);
+            z-index: 20;
+            animation: slideRight 0.6s forwards;
+            background-color: transparent;
+
+            @keyframes slideRight {
+                from { margin-left: size(0)};
+                to { margin-left: size(-200)}
+            }
+        }
+    
+        .userCard{
+            position: relative;
+            width: 100%;
+            padding: size(12) size(36);
+
+            .avatar{
+                width: size(90);
+                height: size(90);
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            
+            .userInfo{
+                
+                .userName{
+                    font-size: size(20);
+                    font-weight: 600;
+                }
+                .email{
+                    color: $gray_email_text_color;
+                }
+            }
+            .close{
+                position: absolute;
+                top: size(10);
+                right: size(10);
+                width: size(38);
+                height: size(38);
+                background: #ffffff;
+                border-radius: size(10);
+                img{
+                    @include center_absolute;
+                    width: size(5);
+                    height: size(10);
+                }
+               
+               
+            }
+        } 
+        
+    }
+    .overlay{
+        position: absolute;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(128, 128, 128, 0.311);
+        z-index: 11;
+    }
+
+    .sidebarList{
+        width: 100%;
+        padding-left: size(20);
+        list-style-type: none;
+
+        .sidebarItem{
+            display: flex;
+            width: 100%;
+            height: size(23);
+            margin-bottom: size(36);
+            img{
+                width: size(23);
+                height:  size(23);
+                margin-right: size(18);
+            }
+            span{
+                font-size: size(18);
+            }
+        }
+
+        
+    }
+
+    .log_outButton{
+        position: absolute;
+        bottom: size(10);
+        left: size(24);
+        z-index: 40;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 size(10);
+        width: size(117);
+        height: size(43);
+        background: $main_theme_color;
+        box-shadow: 0px 10px 30px rgba(254, 114, 76, 0.2);
+        border-radius: 28.5px;
+
+        img{
+            width: size(26);
+            height: size(26);
+            margin-right: size(8);
+        }
+        span{
+            color: #ffffff;
+        }
+    }
+}
