@@ -3,15 +3,16 @@ import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from './routes/routes';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [isShow,setIsShow] = useState(false)
-
   useEffect(() => {
     setTimeout(() => {
       setIsShow(true)
     },2000)
-
+   
+    
     return () => {
       setIsShow(false)
     }
@@ -27,7 +28,9 @@ function App() {
     <div className="App">
      <BrowserRouter>
         <Routes/>
+        <Footer/>
      </BrowserRouter>
+     
     </div>
   );
 }

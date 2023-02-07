@@ -1,0 +1,13 @@
+[
+    {
+      "id": 1, 
+      "name": "Mdfdf",
+      "categories": ["burger", "fast food"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "src/img"
+    }
+]
+  

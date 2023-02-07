@@ -1,4 +1,6 @@
 @import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 .footer{
     position: fixed;
     bottom: 0;
@@ -9,23 +11,34 @@
     nav{
         width: 100%;
         height: 100%;
-        padding: 0 10px;
         display: flex;
-        // justify-content: space-evenly;
         align-items: center;
         text-align: center;
 
         .navItem{
-            outline: inset red;
+            position: relative;
             width: 100%;
             height: 100%;
             border-radius: size(4);
-            background: gray;
-            // margin-right: ;
-
+            
             img{
-                width: size(28);
-                height: size(27);
+                width: size(27);
+                height: size(28);
+                flex-shrink: 0;
+                margin-top: size(8);
+            }
+
+            .itemLabel{
+                position: absolute;
+                width: 100%;
+                height: size(75);
+                top: size(10);
+                width: 100%;
+                height: 100%;
+                padding-top: size(30);
+                font-size: size(10);
+                color: $gray_text;
+                flex-shrink: 0;
             }
         }
     }
