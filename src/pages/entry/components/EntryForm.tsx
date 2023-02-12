@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { CLIENT_RENEG_LIMIT } from 'tls'
 import { formTypes } from '../../../dto/form'
 import { userTypes } from '../../../dto/userTypes'
 import useFetch from '../../../utils/hooks/useFetch'
 import styles from './EntryForm.module.scss'
 import { SocailMediaAcccountLogIn } from './SocialMediaAccountLogIn'
+import { loggedInReducer,initialLogInState } from '../../../reducers/entry/logInFeature'
+import { logInActionTypes } from '../../../actions/logInActions'
+import { loginTypes } from '../../../dto/login'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function EntryForm({formFor}:formTypes) {
-
+    const [user,setUser] = useState<loginTypes>({userName:"",isLoggedIn: false})
+    const navigate = useNavigate();
     const {data} = useFetch(' http://localhost:0447/users');
     console.log(data,"data")
 
@@ -26,10 +31,12 @@ export default function EntryForm({formFor}:formTypes) {
         if(un.includes(emaiInput) && pw.includes(passwordInput)){
            sessionStorage.setItem("user",emaiInput);
            sessionStorage.setItem("password",passwordInput);
+            setUser({userName:emaiInput,isLoggedIn:true})
+            navigate('/home')
         }else{
             console.log("world")
         }
-        console.log(un,"$$$$")
+      
     }
   return (
     <React.Fragment>
