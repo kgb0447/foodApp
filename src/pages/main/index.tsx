@@ -6,14 +6,22 @@ import Searchbar from '../../components/searchbar/Searchbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import HorizontalSwiper from '../../components/swiper/horizontal/HorizontalSwiper'
 import { RootState } from '../../store/store'
-import { useAppSelector } from '../../utils/hooks/redux/hooks'
+import { useAppSelector,useAppDispatch } from '../../utils/hooks/redux/hooks'
 import styles from './styles.module.scss'
+import { getCategories } from '../../reducers/categories/categoryFeatureSlice'
 
 
 
 export default function MainPage() {
+  const dispatch = useAppDispatch();
   const menuList = useAppSelector((state:RootState) => state.mapperReducer.menuList);
+  const cat = useAppSelector((state: RootState) => state.categoryReducer.items);
 
+
+  useEffect(()=>{
+    dispatch(getCategories("http://localhost:8888/menu"))
+  },[])
+  console.log("cat",cat)
   const [isShown,setIsShown] = useState<React.SetStateAction<boolean>>(false);
 
   console.log("menuList",menuList)

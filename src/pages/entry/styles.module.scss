@@ -1,0 +1,42 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+
+.entryWrapper{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180.18deg, rgba(73, 77, 99, 0) 0.17%, #191B2F 90.29%), url('../../assets/img/entry/entry_bg@2x.png');
+    background-size: 100% 100%;
+
+    .grretingSection{
+        width: 100%;
+        height: size(184);
+        padding: size(30);
+        font-size: size(45);
+        font-weight: 700;
+
+        .label{
+        width: size(293);
+        height: size(16);
+        font-size: size(16);
+        background: url('../../assets/img/entry/line_bg@2x.png');
+        background-size: 100% 100%;
+    }
+
+        .greetings{
+            color: $black_font_color;
+            font-size: size(45);
+        }
+        .appName{
+            color: $main_theme_color;
+            font-size: size(45);
+        }
+        p{
+            color: #30384F;
+            font-size: size(18);
+        }
+    }
+    
+    
+}

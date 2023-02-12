@@ -1,0 +1,58 @@
+@import '../../../styles/functions.scss';
+@import '../../../styles/variables.scss';
+
+.entryButtons{
+    position: absolute;
+    bottom: size(36);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: transparent;
+
+    .label{
+        position: relative;
+        top: size(-30);
+        width: size(293);
+        height: size(16);
+        font-size: size(16);
+        background: url('../../../assets/img/entry/line_bg@2x.png');
+        background-size: 100% 100%;
+       
+    }
+    button{
+        position: relative;
+        margin-bottom: size(22);
+        padding-left: size(24);
+        width: size(139);
+        height: size(54);
+        background: #FFFFFF;
+        box-shadow: size(18) size(18) size(36) rgba(211, 209, 216, 0.25);
+        border-radius: size(28);
+        flex-shrink: 0;
+        border: none;
+
+        img{
+            position: absolute;
+            left: size(12);
+            width: size(28);
+            height: size(28);
+            
+        }
+    }
+    .register{
+        padding: 0;
+        width: size(315);
+        height: size(54);
+        background: rgba(255, 255, 255, 0.21);
+        border: size(1) solid #FFFFFF;
+        border-radius: size(30);
+        color: #ffffff;
+    }
+    .login{
+        color: #ffffff;
+        font-size: size(16);
+    }
+}

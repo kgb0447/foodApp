@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
 import mapFeatureSliceReducer from '../reducers/fetchedAPIReducer/mapFeatureSlice'
+import categoryFeatureSliceReducer from '../reducers/categories/categoryFeatureSlice'
 
 export const store = configureStore({
     reducer: {
-        mapperReducer : mapFeatureSliceReducer
+        mapperReducer : mapFeatureSliceReducer,
+        categoryReducer: categoryFeatureSliceReducer,
     }
 })
 

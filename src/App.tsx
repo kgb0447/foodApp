@@ -6,7 +6,7 @@ import { Routes } from './routes/routes';
 import Footer from './components/footer/Footer';
 
 function App() {
-  const [isShow,setIsShow] = useState(false)
+  const [isShow,setIsShow] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setIsShow(true)
@@ -18,19 +18,21 @@ function App() {
     }
   }, [])
   
-  
+  const PATHS = ["/","/signin","/login"];
 
   if(!isShow){
     return <img src={require('./assets/img/splash@2x.png')} className={"splash"} alt=""/>
   }
-
+  
   return (
     <div className="App">
      <BrowserRouter>
         <Routes/>
-        <Footer/>
+        {
+          PATHS.includes(window.location.pathname) ? null : (<Footer/>)
+        }
+        
      </BrowserRouter>
-     
     </div>
   );
 }

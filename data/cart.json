@@ -1,16 +1,19 @@
-[
+{
+  "posts": [
     {
-      "user": 20, 
-      "items": [
-        {
-          "id": 1, 
-          "quantity": 2
-        },
-        {
-          "id": 4,
-          "quantity": 2
-        }
-      ]
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
     }
-]
-  
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
