@@ -1,10 +1,16 @@
 
 import { logInActionTypes } from "../../actions/logInActions"
-import { loginTypes } from "../../dto/login"
+// import { loginTypes } from "../../dto/login"
 
-export const initialLogInState:loginTypes = {
+interface loginTypes{
+    isLoggedIn: boolean,
+    fullName: string,
+    userName: string
+}
+export const initialLogInState: loginTypes = {
     isLoggedIn: false,
-    userName:"",
+    fullName: "",
+    userName: "",
 }
 
 interface loginAction{
@@ -14,9 +20,11 @@ interface loginAction{
 export const loggedInReducer = (state: loginTypes, action: loginAction) => {
     switch(action.type){
         case logInActionTypes.USER_LOGGED_IN:
-            return  state.isLoggedIn = true;
+        return state.fullName = action.payload.fullName, state.isLoggedIn = true, state.userName = action.payload.username;
+        case logInActionTypes.TEST : 
+                return console.log(action.payload,"test")
         default:
-            return state
+            return 
     }
 }
 

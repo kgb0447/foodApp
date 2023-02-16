@@ -5,8 +5,9 @@ import MainPage from "../pages/main";
 import Location from "../pages/geolocation/Location";
 import { MinePage } from "../pages/mine/MinePage";
 import { Entry } from "../pages/entry";
-import Login from "../pages/entry/components/sign_in/Login";
-import Register from "../pages/entry/components/sign_up/Register";
+import SignIn from "../pages/entry/components/sign_in/SignIn";
+import SignUp from "../pages/entry/components/sign_up/SignUp";
+import EntryFormV2 from "../pages/entry/components/EntryFormV2";
 
 export const Routes = () => {
     const route = useRoutes([
@@ -37,16 +38,20 @@ export const Routes = () => {
         
         {
             path: '/signin',
-            element: <Login/>
+            element: <SignIn/>
         },
         {
             path: '/signup',
-            element: <Register/>
+            element: <SignUp/>
         },
+        // {
+        //     path: '*',
+        //     element:  <MainPage/>
+        // },
         {
-            path: '*',
-            element:  <MainPage/>
-        },
+            path: '/entry/:id',
+            element: <EntryFormV2/>
+        }
     ])
 
     return route;

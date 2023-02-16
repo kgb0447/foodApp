@@ -4,8 +4,10 @@ import { SocailMediaAcccountLogIn } from './components/SocialMediaAccountLogIn';
 
 export const Entry = () => {
     const navigate = useNavigate();
-    const handleLink = (path) => {
-        navigate(path)
+
+    const handleLink = (path:string) => {
+        navigate(path);
+        console.log("path:",path)
     }
     return(
         <div className={styles.entryWrapper}>

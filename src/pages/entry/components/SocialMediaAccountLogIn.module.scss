@@ -3,6 +3,7 @@
 
 .entryButtons{
     position: absolute;
+    left: 0;
     bottom: size(36);
     display: flex;
     flex-wrap: wrap;
@@ -54,5 +55,7 @@
     .login{
         color: #ffffff;
         font-size: size(16);
+        background: red;
+        
     }
 }
