@@ -18,7 +18,7 @@ function App() {
     }
   }, [])
   
-  const PATHS = ["/","/signin","/login","/entry/:signin"];
+  const PATHS = ["/","/signin","/login","/entry/signin","entry/signup"];
 
   if(!isShow){
     return <img src={require('./assets/img/splash@2x.png')} className={"splash"} alt=""/>

@@ -10,7 +10,7 @@ export const getCategories : any= createAsyncThunk(
     async (url: string) => {
         const res = await fetch(url);
         const data = await res.json();
-        return data;
+        return data.map((item:any) => item.category);
     }
 );
 const categoryFeatureSlice = createSlice({

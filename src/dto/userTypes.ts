@@ -1,5 +1,7 @@
 export interface userTypes {
-    id: number,
+    id: string,
+    fullName:string,
     username: string,
-    password:string
+    password: string,
+    data?:any,
 }

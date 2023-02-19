@@ -1,12 +1,14 @@
 import React from 'react'
 import { RootState } from '../../../store/store';
 import { useAppSelector } from '../../../utils/hooks/redux/hooks';
+import useFetch from '../../../utils/hooks/useFetch';
 import styles from './HorizontalSwiper.module.scss'
 
 interface HorizontalSwiperTypes{
   swiperItems: any[]
 }
 export default function HorizontalSwiper({swiperItems}: HorizontalSwiperTypes) {
+
  console.log("swiperItems",swiperItems.length);
   return (
     <div className={styles.swiperContainer}>
@@ -21,9 +23,9 @@ export default function HorizontalSwiper({swiperItems}: HorizontalSwiperTypes) {
               swiperItems.map((item:any) => (
                 item.map((val:any, index: number) => (
                   <div className={styles.swiperItems} 
-                  key={val?.orderNo + index}>
+                  key={val.id}>
                     <img src={val?.img} alt={""} />
-                    {/* <div className={styles.itemLabel}>{val.name}</div> */}
+                    <div className={styles.itemLabel}>{val.name}</div>
                     <div className={styles.rateWrapper}>
                       <div className={styles.rate}>4.5</div>
                       <span>25+</span>
