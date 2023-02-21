@@ -2,12 +2,12 @@
 @import '../../../styles/functions.scss';
 @import '../../../styles/variables.scss';
 
+
 .swiperContainer{
     position: relative;
     margin-bottom: size(10);
     width: 100vw;
     padding: 0;
-    outline: inset red 2px;
 
     .swiperHeader{
         width: 100%;
@@ -29,7 +29,6 @@
             margin-right: size(4);
 
             &::after{
-               
                 position: absolute;
                 top: size(4);
                 content: "";
@@ -57,30 +56,48 @@
         .swiperItems{
             position: relative;
             width: size(266);
-            height:100%;
+            height: size(229);
             flex-shrink: 0;
             margin-right: size(20);
             background: #FFFFFF;
             box-shadow:size(15) size(15) size(30) rgba(211, 209, 216, 0.25);
             border-radius: size(15);
 
-            .itemLabel{
+            .itemDesc{
                 position: absolute;
                 bottom: 0;
                 width:100%;
                 height: size(102);
-                background: rgb(134, 132, 132);
-                border-radius: size(20);
+                background:#ffffff;
+                border-radius: 0 0 size(20) size(20);
+                padding: 0 size(10);
                 
-
+                .itemLabel{
+                    
+                }
             }
+            .itemCategories{
+                color: $category_text_color;
+                letter-spacing: -0.02em;
+                
+                span{
+                    background: #F6F6F6;
+                    border-radius: size(5);
+                    font-size: size(12);
+                    margin-right: size(6);
+                    text-transform: uppercase;
+                }
+            }
+            
 
             img{
-               position: absolute;
-               width: size(266);
-               height: size(136);
-               object-fit: cover;
-               border-radius: size(15) size(15) 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: size(266);
+                height: size(136);
+                object-fit: cover;
+                border-radius: size(15) size(15) 0 0;
             }
 
             .rateWrapper{
@@ -105,14 +122,15 @@
 
                 span{
                     color: $lightgray_text;
-                    font-size: size(8);
+                    font-size: size(9);
                     font-weight: 400;
-                    letter-spacing:-1px;
+                    letter-spacing:size(2);
                     margin-left: 4px;
 
                     &::before{
                         position: absolute;
-                        right: size(42);
+                        top: size(4);
+                        right: size(44);
                         content: url('../../../assets/img/cards/start_icon@2x.png');
                         width: size(10);
                         height: size(10);

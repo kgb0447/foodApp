@@ -10,6 +10,7 @@ import { useAppSelector,useAppDispatch } from '../../utils/hooks/redux/hooks'
 import styles from './styles.module.scss'
 import { getCategories } from '../../reducers/categories/categoryFeatureSlice'
 import useFetch from '../../utils/hooks/useFetch'
+import { PRODUCT_API, RESTAURANT_API } from '../../const/commonService'
 
 
 
@@ -17,12 +18,8 @@ export default function MainPage() {
   const dispatch = useAppDispatch();
   const menuList = useAppSelector((state:RootState) => state.mapperReducer.menuList);
   const cat = useAppSelector((state: RootState) => state.categoryReducer.items);
-  const {data} = useFetch("http://localhost:0448/products");
-  console.log(data,"TTT")
+  const {data} = useFetch(RESTAURANT_API);
 
-  useEffect(()=>{
-    dispatch(getCategories("http://localhost:0448/products"))
-  },[])
   console.log("cat",cat)
   const [isShown,setIsShown] = useState<React.SetStateAction<boolean>>(false);
 
@@ -32,13 +29,13 @@ export default function MainPage() {
     <div className={styles.mainPage}>      
         <Header userInfo='Kael,Bisco' callBack={setIsShown}/>
         <div className={styles.greetings}>
-        What would you like to order ?
+        What would you like to order?
         </div>
         <Searchbar/>
         <Categories data={data} />
         <section className={styles.foodContent}>
-          <HorizontalSwiper swiperItems={menuList}/>
-          <HorizontalSwiper swiperItems={menuList}/>
+          <HorizontalSwiper swiperItems={data}/>
+          {/* <HorizontalSwiper swiperItems={menuList}/> */}
         </section>
         {
           isShown ? (<Sidebar state={isShown} callBack={setIsShown}/>) : null

@@ -3,8 +3,9 @@ import useFetch from '../../../utils/hooks/useFetch';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks/redux/hooks';
 import { getCategory,getMenuList } from '../../../reducers/fetchedAPIReducer/mapFeatureSlice';
 import { RootState } from '../../../store/store';
-import styles from './styles.module.scss'
+
 import { productTypes } from '../../../dto/products';
+import styles from './styles.module.scss'
 
 export default function Categories({data}:{data:any}) {
   const [categories,setCategories] = useState([])
@@ -15,10 +16,13 @@ export default function Categories({data}:{data:any}) {
   useEffect(() => {
     if(data){
       const categories = data.map((item:any) => item.categories).flat();
-      const allCategories : any= new Set(categories);
-      setCategories(allCategories)
+      setCategories(Array.from(new Set(categories)))
     }
-  }, [])
+
+    return () => {
+      setCategories([]);
+    }
+  }, [data])
 
   if(!data){
     return <div>...loading</div>
@@ -43,20 +47,18 @@ export default function Categories({data}:{data:any}) {
   // const lowestPrice = prices.sort((a:any,b:any)=> a.price - b.price).slice(0,2);
   // console.log(category.toLowerCase(),"category")
 
-  
-    
-    console.log(categories,"!!!!!")
+
  
   
   return (
     <div className={styles.categories} style={{background:``}}>
       {
-        categories.length >= 1 ? (categories.map((item:string,index:number) => (
+        categories.map((item:string,index:number) => (
           <div className={styles.categoryItems} key={item+index}>
-            
+            <img src={`../../../assets/img/category/${item}_icon@2x.png`} alt="" />
             <p>{item}</p>
           </div>
-        ))) : null
+        ))
       }
 
     </div>

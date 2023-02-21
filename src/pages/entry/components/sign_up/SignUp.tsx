@@ -27,7 +27,7 @@ export default function SignUp() {
         if(!checkUserNameDuplicate(userNameInput,data)){
           signUp(userNameInput,userPasswordInput);
           setIsEqual(true);
-          navigate('/home')
+          navigate('/discover')
           
         }
         else{

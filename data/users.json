@@ -35,6 +35,12 @@
       "username": "tae@gmail.com",
       "password": "12345",
       "id": 6
+    },
+    {
+      "fullName": "",
+      "username": "re1@gmail.com",
+      "password": "12345",
+      "id": 7
     }
   ]
 }

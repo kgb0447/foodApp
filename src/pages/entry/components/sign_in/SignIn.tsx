@@ -29,7 +29,7 @@ export default function SignIn() {
        sessionStorage.setItem("user",emaiInput);
        sessionStorage.setItem("password",passwordInput);
         setUser({userName:emaiInput,isLoggedIn:true})
-        navigate('/home')
+        navigate('/discover')
     }else{
         console.log("world")
     }

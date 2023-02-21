@@ -16,7 +16,7 @@ export const Routes = () => {
             element: <Entry/>
         },
         {
-            path: '/home',
+            path: '/discover',
             element: <MainPage/>
         },
         {

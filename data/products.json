@@ -30,5 +30,68 @@
       "reviews": 25,
       "thumbnail": ""
     }
+  ],
+
+  "restuarants" : [
+    {
+      "id": 23, 
+      "name": "MCdonalds",
+      "categories": ["burger", "fast food"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/mcdonalds_card@2x.png"
+    },
+    {
+      "id": 24, 
+      "name": "Mang Inasal",
+      "categories": ["chicken", "fast food"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/mang_inasal_card@2x.png"
+    },
+    {
+      "id": 26, 
+      "name": "Jollibee",
+      "categories": ["chicken", "fast food","burger"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/jollibee_card@2x.png"
+    },
+    {
+      "id": 27, 
+      "name": "KFC",
+      "categories": ["chicken", "fast food","burger"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/kfc_card@2x.png"
+    },
+    {
+      "id": 28, 
+      "name": "Greenwich",
+      "categories": ["chicken", "fast food","burger"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/greenwich_card@2x.png"
+    },
+    {
+      "id": 29, 
+      "name": "Chowking",
+      "categories": ["chicken", "fast food","burger"],
+      "free_delivery": true,
+      "delivery_time": "10-15 mins",
+      "ratings": 4.5,
+      "reviews": 25,
+      "thumbnail": "APIAssets/img/chowking_card@2x.png"
+    }
   ]
 }
