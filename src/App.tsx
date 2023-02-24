@@ -28,9 +28,8 @@ function App() {
     <div className="App">
      <BrowserRouter>
         <Routes/>
-        {
-          PATHS.includes(window.location.pathname) ? null : (<Footer/>)
-        }
+      <Footer/>
+    
         
      </BrowserRouter>
     </div>

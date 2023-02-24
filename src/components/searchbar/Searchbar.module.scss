@@ -18,6 +18,9 @@
         margin-right: size(20);
         border: 1px solid #EFEFEF;
         border-radius: size(10);
+        &:focus{
+            background: none;
+        }
     }
 
     .filter{

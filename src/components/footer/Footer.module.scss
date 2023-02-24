@@ -23,7 +23,7 @@
             
             img{
                 width: size(27);
-                height: size(28);
+                height: size(29);
                 flex-shrink: 0;
                 margin-top: size(8);
             }
@@ -39,6 +39,23 @@
                 font-size: size(10);
                 color: $gray_text;
                 flex-shrink: 0;
+            }
+
+            &.active{
+               
+                .itemLabel{
+                    position: absolute;
+                    width: 100%;
+                    height: size(75);
+                    top: size(10);
+                    width: 100%;
+                    height: 100%;
+                    padding-top: size(30);
+                    font-size: size(10);
+                    color: $gray_text;
+                    flex-shrink: 0;
+                    color: $main_theme_color;
+                }
             }
         }
     }

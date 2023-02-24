@@ -33,9 +33,8 @@
     "eject": "react-scripts eject",
     "foodapp": "npm-run-all --parallel users products app",
     "users": "json-server --watch ./data/users.json --port 0447",
-    "products":"json-server --watch ./data/products.json --port 0448",
+    "products": "json-server --watch ./data/products.json --port 0448",
     "app": "react-scripts start"
-    
   },
   "eslintConfig": {
     "extends": [

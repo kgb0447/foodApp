@@ -5,3 +5,7 @@ export const isEqual = (param1:any,param2:any) : boolean => {
         return false;
     }
 }
+
+export const removeSpaces = (ele:string) : string=> {
+    return ele.replace(/ +/g, "");
+}

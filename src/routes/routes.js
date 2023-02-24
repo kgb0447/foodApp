@@ -8,6 +8,7 @@ import { Entry } from "../pages/entry";
 import SignIn from "../pages/entry/components/sign_in/SignIn";
 import SignUp from "../pages/entry/components/sign_up/SignUp";
 import EntryFormV2 from "../pages/entry/components/EntryFormV2";
+import ProductPage from "../pages/products/ProductPage";
 
 export const Routes = () => {
     const route = useRoutes([
@@ -44,13 +45,13 @@ export const Routes = () => {
             path: '/signup',
             element: <SignUp/>
         },
-        // {
-        //     path: '*',
-        //     element:  <MainPage/>
-        // },
         {
             path: '/entry/:id',
             element: <EntryFormV2/>
+        },
+        {
+            path: '/foodMenu/:id',
+            element: <ProductPage/>
         }
     ])
 

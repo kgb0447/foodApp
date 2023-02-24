@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import useFetch from '../../../utils/hooks/useFetch';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks/redux/hooks';
 import { getCategory,getMenuList } from '../../../reducers/fetchedAPIReducer/mapFeatureSlice';
 import { RootState } from '../../../store/store';
+import { removeSpaces } from '../../../utils/helpers';
 
 import { productTypes } from '../../../dto/products';
 import styles from './styles.module.scss'
 
-export default function Categories({data}:{data:any}) {
+export default function Categories({data,setActiveCat}:{data:any,setActiveCat:any}) {
+  const navigate = useNavigate();
   const [categories,setCategories] = useState([])
   
-  // const dispatch = useAppDispatch();
-  // const category = useAppSelector((state:RootState) => state.mapperReducer.category);
  
   useEffect(() => {
     if(data){
@@ -24,10 +25,16 @@ export default function Categories({data}:{data:any}) {
     }
   }, [data])
 
+  const handleSelect = (ele:any) => {
+    setActiveCat(ele.trim());
+    navigate(`/foodMenu/${removeSpaces(ele)}`);
+    
+  }
+
   if(!data){
     return <div>...loading</div>
   }
-  console.log(data,"ttt")
+
   // useEffect(() => {
   //   (()=>{
   //     if(categories){
@@ -54,8 +61,8 @@ export default function Categories({data}:{data:any}) {
     <div className={styles.categories} style={{background:``}}>
       {
         categories.map((item:string,index:number) => (
-          <div className={styles.categoryItems} key={item+index}>
-            <img src={`../../../assets/img/category/${item}_icon@2x.png`} alt="" />
+          <div className={styles.categoryItems} key={item+index} onClick={()=> handleSelect(item)}>
+            <img src={require(`../../../assets/img/category/${removeSpaces(item)}_icon@2x.png`)} alt="" />
             <p>{item}</p>
           </div>
         ))

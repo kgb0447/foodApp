@@ -1,4 +1,5 @@
 import {useReducer,useEffect, useState} from 'react'
+
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import Categories from '../../components/navigation/categories'
@@ -15,15 +16,23 @@ import { PRODUCT_API, RESTAURANT_API } from '../../const/commonService'
 
 
 export default function MainPage() {
+ 
   const dispatch = useAppDispatch();
   const menuList = useAppSelector((state:RootState) => state.mapperReducer.menuList);
   const cat = useAppSelector((state: RootState) => state.categoryReducer.items);
   const {data} = useFetch(RESTAURANT_API);
-
-  console.log("cat",cat)
+  const [activeCat,setActiveCat] = useState('');
   const [isShown,setIsShown] = useState<React.SetStateAction<boolean>>(false);
 
-  console.log("menuList",menuList)
+  // useEffect(() => {
+  
+  //   // navigate(`/foodMenu/${activeCat}`);
+  //   return () => {
+  //     navigate(`/discover`);
+  //   }
+  // }, [activeCat]);
+
+ console.log(activeCat.replace(/ +/g, ""),"testeeeee")
 
   return (
     <div className={styles.mainPage}>      
@@ -31,8 +40,8 @@ export default function MainPage() {
         <div className={styles.greetings}>
         What would you like to order?
         </div>
-        <Searchbar/>
-        <Categories data={data} />
+        <Searchbar />
+        <Categories data={data} setActiveCat={setActiveCat}/>
         <section className={styles.foodContent}>
           <HorizontalSwiper swiperItems={data}/>
           {/* <HorizontalSwiper swiperItems={menuList}/> */}
