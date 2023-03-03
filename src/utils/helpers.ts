@@ -9,3 +9,9 @@ export const isEqual = (param1:any,param2:any) : boolean => {
 export const removeSpaces = (ele:string) : string=> {
     return ele.replace(/ +/g, "");
 }
+
+
+export const getSelectedItem = (item:any,arr:any[]) => {
+    const selectedItem = arr.filter((val: string) => val === item);
+    return selectedItem;
+}

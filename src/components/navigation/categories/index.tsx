@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import useFetch from '../../../utils/hooks/useFetch';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks/redux/hooks';
-import { getCategory,getMenuList } from '../../../reducers/fetchedAPIReducer/mapFeatureSlice';
-import { RootState } from '../../../store/store';
+import { RootState, store } from '../../../store/store';
 import { removeSpaces } from '../../../utils/helpers';
-
-import { productTypes } from '../../../dto/products';
 import styles from './styles.module.scss'
+import { getCategories } from '../../../reducers/categories/categoryFeatureSlice';
+import { setActiveCategory } from '../../../features/serviceAPI/serviceAPISlice';
 
 export default function Categories({data,setActiveCat}:{data:any,setActiveCat:any}) {
   const navigate = useNavigate();
-  const [categories,setCategories] = useState([])
-  
- 
-  useEffect(() => {
-    if(data){
-      const categories = data.map((item:any) => item.categories).flat();
-      setCategories(Array.from(new Set(categories)))
-    }
+  const dispatch = useAppDispatch();
+  const myCategories = useAppSelector((state: RootState) => state.serviceAPI.categories);
 
-    return () => {
-      setCategories([]);
-    }
-  }, [data])
+console.log(myCategories,"cccccc")
+  useEffect(()=>{
+    dispatch(getCategories('http://localhost:0448/products'))
+  },[])
+ 
 
   const handleSelect = (ele:any) => {
-    setActiveCat(ele.trim());
-    navigate(`/foodMenu/${removeSpaces(ele)}`);
-    
+    // setActiveCat(ele.trim());
+    console.log(ele,"tttttt")
+    dispatch(setActiveCategory(ele));
+    navigate(`/foodMenu/${ele.trim()}`)
   }
 
   if(!data){
@@ -56,11 +50,12 @@ export default function Categories({data,setActiveCat}:{data:any,setActiveCat:an
 
 
  
+ 
   
   return (
     <div className={styles.categories} style={{background:``}}>
       {
-        categories.map((item:string,index:number) => (
+        myCategories.map((item:string,index:number) => (
           <div className={styles.categoryItems} key={item+index} onClick={()=> handleSelect(item)}>
             <img src={require(`../../../assets/img/category/${removeSpaces(item)}_icon@2x.png`)} alt="" />
             <p>{item}</p>

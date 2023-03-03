@@ -9,9 +9,11 @@ import HorizontalSwiper from '../../components/swiper/horizontal/HorizontalSwipe
 import { RootState } from '../../store/store'
 import { useAppSelector,useAppDispatch } from '../../utils/hooks/redux/hooks'
 import styles from './styles.module.scss'
-import { getCategories } from '../../reducers/categories/categoryFeatureSlice'
+// import { getCategories } from '../../reducers/categories/categoryFeatureSlice'
 import useFetch from '../../utils/hooks/useFetch'
 import { PRODUCT_API, RESTAURANT_API } from '../../const/commonService'
+import { useSelector,useDispatch } from 'react-redux'
+import { getData } from '../../features/serviceAPI/serviceAPISlice'
 
 
 
@@ -23,16 +25,22 @@ export default function MainPage() {
   const {data} = useFetch(RESTAURANT_API);
   const [activeCat,setActiveCat] = useState('');
   const [isShown,setIsShown] = useState<React.SetStateAction<boolean>>(false);
+  const myData = useAppSelector((state: RootState) => state.serviceAPI.data);
+  const isLoading = useAppSelector((state:RootState) => state.serviceAPI.isLoading)
 
-  // useEffect(() => {
-  
-  //   // navigate(`/foodMenu/${activeCat}`);
-  //   return () => {
-  //     navigate(`/discover`);
-  //   }
-  // }, [activeCat]);
 
- console.log(activeCat.replace(/ +/g, ""),"testeeeee")
+  useEffect(() => {
+    dispatch(getData());
+   
+      
+    
+  }, [dispatch]);
+
+  if(isLoading){
+    return <h1>...Loading</h1>
+  }
+
+  console.log(myData,"myData")
 
   return (
     <div className={styles.mainPage}>      
