@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Header.module.scss'
-import {IoMdNotificationsOutline} from 'react-icons/io'
 
 
 interface headerTypes {

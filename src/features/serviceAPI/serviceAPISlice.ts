@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { stat } from "fs";
 import { serviceAPITypes } from "../../dto/serviceAPI";
 
 const initialState :serviceAPITypes = {
@@ -22,11 +21,7 @@ export const getData = createAsyncThunk(
 export const serviceAPISlice = createSlice({
     name: "serviceAPI",
     initialState,
-    reducers: {
-        setActiveCategory : (state,action:PayloadAction<any>) => {
-            state.activeCategory = state.data.filter((obj:any) => obj.categories.some((value:string) => value === action.payload))
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getData.pending, (state) => {
             state.isLoading = true;
@@ -45,5 +40,4 @@ export const serviceAPISlice = createSlice({
     }
 })
 
-export const {setActiveCategory} = serviceAPISlice.actions
 export default serviceAPISlice.reducer

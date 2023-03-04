@@ -1,32 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
-import { PRODUCT_API } from '../../const/commonService';
-import useFetch from '../../utils/hooks/useFetch';
-import styles from './ProductPage.module.scss';
-import {productTypes} from '../../dto/products'
-import { useAppSelector } from '../../utils/hooks/redux/hooks';
 import { RootState } from '../../store/store';
-
+import { useAppSelector,useAppDispatch } from '../../utils/hooks/redux/hooks';
+import { useNavigate, useParams } from 'react-router-dom';
+import {productTypes} from '../../dto/products'
+import styles from './ProductPage.module.scss';
 
 export default function ProductPage() {
-    const [currentCategory,setCurrentCategory] = useState([]);
-    const {data,isLoading} = useFetch(PRODUCT_API);
     const navigate = useNavigate();
-    const activeCategory = useAppSelector((state: RootState) => state.serviceAPI.activeCategory);
     const {id} = useParams();
+    const dispatch = useAppDispatch();
+    const activeCategory = useAppSelector((state:RootState) => state.getServiceProps.activeCategory);
 
     const handleClose =() => {
-        navigate('/discover');
+        navigate(-1);
     }
-    
-    useEffect(() => {
-        setCurrentCategory(data.filter((item:any)=> item.categories.some((val:any) => val === "chicken")))
-    }, [data])
-    
-    if(isLoading){
-        return <h1>...Loading</h1>
-    }
-
+    console.log(activeCategory,"activeCategory")
   return (
     <div className={styles.productPageWrapper}>
         <header>

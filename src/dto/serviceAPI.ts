@@ -1,7 +1,9 @@
+
+
 export interface serviceAPITypes {
     data : any,
     isLoading: boolean,
-    error : null | undefined | string,
+    error : any,
     categories: string[],
     activeCategory: any[]
 }

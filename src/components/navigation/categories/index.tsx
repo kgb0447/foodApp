@@ -1,33 +1,23 @@
-import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks/redux/hooks';
-import { RootState, store } from '../../../store/store';
+import { RootState } from '../../../store/store';
 import { removeSpaces } from '../../../utils/helpers';
+import { getActiveCategory } from '../../../features/getServiceProperty/getServiceProperty';
 import styles from './styles.module.scss'
-import { getCategories } from '../../../reducers/categories/categoryFeatureSlice';
-import { setActiveCategory } from '../../../features/serviceAPI/serviceAPISlice';
 
-export default function Categories({data,setActiveCat}:{data:any,setActiveCat:any}) {
+export default function Categories() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const myCategories = useAppSelector((state: RootState) => state.serviceAPI.categories);
-
-console.log(myCategories,"cccccc")
-  useEffect(()=>{
-    dispatch(getCategories('http://localhost:0448/products'))
-  },[])
- 
-
+  const data = useAppSelector((state:RootState) => state.serviceAPI.data)
+  
   const handleSelect = (ele:any) => {
     // setActiveCat(ele.trim());
-    console.log(ele,"tttttt")
-    dispatch(setActiveCategory(ele));
+    dispatch(getActiveCategory({data:data,value:ele}));
     navigate(`/foodMenu/${ele.trim()}`)
+    
   }
-
-  if(!data){
-    return <div>...loading</div>
-  }
+  
 
   // useEffect(() => {
   //   (()=>{
@@ -48,10 +38,6 @@ console.log(myCategories,"cccccc")
   // const lowestPrice = prices.sort((a:any,b:any)=> a.price - b.price).slice(0,2);
   // console.log(category.toLowerCase(),"category")
 
-
- 
- 
-  
   return (
     <div className={styles.categories} style={{background:``}}>
       {
