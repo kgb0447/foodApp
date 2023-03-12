@@ -7,3 +7,10 @@ export interface serviceAPITypes {
     categories: string[],
     activeCategory: any[]
 }
+
+export interface cartFeatureTypes{
+    cartItems: any[],
+    isLoading: boolean,
+    error: any,
+    method: any
+}

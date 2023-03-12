@@ -1,0 +1,56 @@
+@import '../../styles/functions.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+
+
+    .productWrapper{
+        
+        position: relative;
+        width: 100%;
+        height: size(247);
+        box-shadow: size(18) size(18) size(36) rgba(211, 209, 216, 0.25);
+        border-radius: size(18);
+        margin-bottom: size(24);
+
+        .price{
+            position: absolute;
+            top: size(12);
+            left: size(12);
+            width: size(72);
+            background: #FFFFFF;
+            box-shadow: size(0) size(7) size(28) rgba(254, 114, 76, 0.2);
+            border-radius: size(121);
+            padding: 0 size(10);
+            text-align: center;
+
+            b{
+                    color: $main_theme_color;
+                    margin-right: size(2);
+            }
+            }
+            img{
+                width:100%;
+                height: size(165);
+                border-radius: size(18);
+                outline: inset red 1px;
+            }
+
+            .itemInfo{
+                width: 100%;
+                font-family: SofiaPro;
+
+                .name{
+                    font-weight: 600;
+                    font-size: size(18);
+                    color: #000000;
+                }
+
+                .description{
+                    color: $entry_prompt_text_color;
+                    font-weight: 400;
+                    font-size: size(14);
+                }
+            }
+    }

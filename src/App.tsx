@@ -4,6 +4,7 @@ import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from './routes/routes';
 import Footer from './components/footer/Footer';
+import { uuid } from './utils/uuid';
 
 function App() {
   const [isShow,setIsShow] = useState(false);
@@ -11,13 +12,13 @@ function App() {
     setTimeout(() => {
       setIsShow(true)
     },2000)
-   
     
     return () => {
       setIsShow(false)
     }
   }, [])
   
+
   const PATHS = ["/","/signin","/login","/entry/signin","entry/signup"];
 
   if(!isShow){
