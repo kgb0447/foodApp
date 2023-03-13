@@ -1,5 +1,73 @@
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+
 .cartWrapper{
     width: 100%;
     height: 100dvh;
-    background: green;
+    padding: 0 size(24);
+
+    header{
+        position: relative;
+        width: 100%;
+        height: size(90);
+        line-height: size(70);
+        text-align: center;
+
+        h2{
+            color: $black_font_color;
+            font-weight: 400;
+            font-size: size(18);
+        }
+    }
+
+    .items{
+        position: relative;
+        width: 100%;
+        height: size(84);
+        display: flex;
+        margin-bottom: size(24);
+        outline: inset red 1px;
+
+        .closeIcon{
+            position: absolute;
+            top: size(4);
+            right: size(4);
+            font-size: size(16);
+            color:  $main_theme_color;
+        }
+
+        img{
+            width: size(82);
+            height: size(82);
+            box-shadow: size(0) size(8) size(25) rgba(224, 219, 196, 0.9);
+            border-radius: size(20);
+        }
+        .quantityWrapper{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            width: size(120);
+            outline: inset red 1px;
+
+            button {
+                width: size(28);
+                height: size(28);
+                border-radius: 50%;
+                border: solid size(0.5) $main_theme_color;
+                background-color: #ffffff;
+                color: $main_theme_color;
+
+                .add {
+                    background-color:$main_theme_color;
+                }
+
+                .minus{
+
+                }
+            }
+        }
+    }
 }

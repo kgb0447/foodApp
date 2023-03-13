@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "foodapp": "npm-run-all --parallel users products cart app",
+    "foodapp": "npm-run-all --parallel cart users products app",
     "users": "json-server --watch ./data/users.json --port 0447",
     "cart": "json-server --watch ./data/cart.json --port 0449",
     "products": "json-server --watch ./data/products.json --port 0448",

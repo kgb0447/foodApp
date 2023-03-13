@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
+import ProductCard from '../../components/card/ProductCard';
+import ProductModal from '../../components/modal/ProductModal';
 import { RootState } from '../../store/store';
-import { useAppSelector,useAppDispatch } from '../../utils/hooks/redux/hooks';
+import { useAppSelector } from '../../utils/hooks/redux/hooks';
 import { useNavigate, useParams } from 'react-router-dom';
 import {productTypes} from '../../dto/products'
 import styles from './ProductPage.module.scss';
-import ProductModal from '../../components/modal/ProductModal';
-import ProductCard from '../../components/card/ProductCard';
 
 export default function ProductPage() {
     const navigate = useNavigate();
@@ -13,11 +13,12 @@ export default function ProductPage() {
     const activeCategory = useAppSelector((state:RootState) => state.getServiceProps.activeCategory);
     const [isSelected,setIsSelected] = useState(false);
     const [selectedItem,setSelectedItem] = useState({})
-
+   
     const handleClose =() => {
-        navigate(-1);
+        const PREV_PAGE : number = -1;
+        navigate(PREV_PAGE);
     }
-    console.log(activeCategory,"activeCategory")
+
     const handleSelect = (val:any) => {
         setIsSelected(true);
         setSelectedItem(activeCategory.filter((item:any) => item === val)[0]);

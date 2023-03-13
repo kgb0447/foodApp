@@ -1,0 +1,18 @@
+@import '../../styles/functions.scss';
+@import '../../styles/mixins.scss';
+
+.closeBtn{
+    position: absolute;
+    width: size(38);
+    height: size(38);
+    background: #ffffff;
+    border-radius: size(10);
+    border: transparent;
+    box-shadow: size(5) size(10) size(20) rgba(211, 209, 216, 0.3);
+
+    img{
+        @include center_absolute;
+        width: size(5);
+        height: size(10);
+    }
+}

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Action } from "@remix-run/router";
 import { cartFeatureTypes } from "../../dto/serviceAPI";
 
 const initialState : cartFeatureTypes= {
@@ -11,7 +10,7 @@ const initialState : cartFeatureTypes= {
 
 export const setCartItem = createAsyncThunk(
     'type/setCartData',
-    async(method: any) => {
+    async(method ?: any) => {
         try{
             const res = await fetch('http://localhost:0449/cart',method)
             const data = res.json();
@@ -19,7 +18,6 @@ export const setCartItem = createAsyncThunk(
         } catch (err) {
             console.error(err)
         }
-       
     }
 )
 
@@ -30,7 +28,7 @@ export const cartFeatureSlice = createSlice({
         addCartItem : (state:any,action:any):any => {
             return {
                 ...state,
-                method : action.payload
+                cartItems : [...state.cartItems,action.payload]
             }
         }
     },
@@ -40,11 +38,11 @@ export const cartFeatureSlice = createSlice({
         })
         builder.addCase(setCartItem.fulfilled, (state,action: any) => {
             state.isLoading = false;
-            state.cartItems = action.payload
+            state.cartItems = action.payload;
         })
         builder.addCase(setCartItem.rejected, (state,action)=>{
             state.isLoading = false;
-            state.error = action.payload
+            state.error = action.error.message
         })
     },
 })

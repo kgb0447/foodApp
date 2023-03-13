@@ -1,20 +1,13 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import { useAppDispatch,useAppSelector } from '../../utils/hooks/redux/hooks'
-import { RootState } from '../../store/store'
-import {AiOutlineClose} from 'react-icons/ai'
-import styles from './ProductModal.module.scss'
 import ReactDOM from 'react-dom'
+import {AiOutlineClose} from 'react-icons/ai'
+import { useAppDispatch,useAppSelector } from '../../utils/hooks/redux/hooks'
 import { setCartItem } from '../../features/cart/cartFeature'
-import useFetch from '../../utils/hooks/useFetch'
-import { CART_API } from '../../const/commonService'
+import styles from './ProductModal.module.scss'
 
 export default function ProductModal({callback,item}:{callback: any,item:any}) {
-  const [foodItem,setFoodItem] = useState({});
   const dispatch = useAppDispatch();
-  const {data} = useFetch(CART_API,postCartItems);
-  const cart = useAppSelector((state : RootState) => state.cart.cartItems)
 
-  const handleClick = () => {
+  const closeModal = () => {
     callback(false)
   }
 
@@ -29,20 +22,13 @@ export default function ProductModal({callback,item}:{callback: any,item:any}) {
         food_id: val.id
       })
     };
-
-    try{
-      const res =  await fetch('http://localhost:0447/users',newCartItem);
-      const mydata = await res.json();
-      console.log(mydata,"myData")
-    } catch(e){
-        alert(e)
-    }
+    dispatch(setCartItem(newCartItem))
   }
 
   return ReactDOM.createPortal(
     <div className={styles.modalOverlay} >
       <div className={styles.modalContainer}>ProductModal
-        <AiOutlineClose onClick={handleClick} className={styles.modalCloseIcon}/>
+        <AiOutlineClose onClick={closeModal} className={styles.modalCloseIcon}/>
         <div className={styles.modalContent}>
           <img src="" alt="" />
           <div className={styles.rateWrapper}>
@@ -59,11 +45,4 @@ export default function ProductModal({callback,item}:{callback: any,item:any}) {
   )
 }
 
-function setCartData(cart: { method: string; headers: { Accept: string }; body: string }): any {
-  throw new Error('Function not implemented.')
-}
-
-function cartItems(cart: { method: string; headers: { Accept: string }; body: string }): any {
-  throw new Error('Function not implemented.')
-}
 
