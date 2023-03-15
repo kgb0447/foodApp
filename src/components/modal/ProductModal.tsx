@@ -1,17 +1,18 @@
 import ReactDOM from 'react-dom'
 import {AiOutlineClose} from 'react-icons/ai'
 import { useAppDispatch,useAppSelector } from '../../utils/hooks/redux/hooks'
-import { setCartItem } from '../../features/cart/cartFeature'
+import { setCartItem,addCartItem } from '../../features/cart/cartFeature'
 import styles from './ProductModal.module.scss'
 
 export default function ProductModal({callback,item}:{callback: any,item:any}) {
   const dispatch = useAppDispatch();
-
+  
   const closeModal = () => {
     callback(false)
   }
 
   async function postCartItems (val:any) {
+    console.log(val,"val")
     const newCartItem = {
       method: 'POST',
       headers: {

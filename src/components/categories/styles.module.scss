@@ -1,6 +1,6 @@
-@import '../../../styles/mixins.scss';
-@import '../../../styles/functions.scss';
-@import '../../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
 
 .categories{
     position: relative;
@@ -9,7 +9,6 @@
     margin:size(10) auto 0 auto;
     @include flexNoShrink;
     justify-content: flex-start;
-    flex-grow: 0;
     overflow-x: auto;
     color: #0000 !important;
    
