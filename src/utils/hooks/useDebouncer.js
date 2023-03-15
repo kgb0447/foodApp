@@ -28,7 +28,7 @@ const useDebounce = (cb = (...args) => {}, wait = 500, deps = []) => {
     };
   }, deps);
 
-  return debounceCB;
+  return {debounceCB};
 };
 
 export default useDebounce;

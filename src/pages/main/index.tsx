@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
-import Categories from '../../components/navigation/categories'
+import Categories from '../../components/categories'
 import Searchbar from '../../components/searchbar/Searchbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import HorizontalSwiper from '../../components/swiper/horizontal/HorizontalSwiper'
@@ -39,9 +39,7 @@ export default function MainPage() {
           <HorizontalSwiper swiperItems={data}/>
           {/* <HorizontalSwiper swiperItems={menuList}/> */}
         </section>
-        {
-          isShown ? (<Sidebar state={isShown} callBack={setIsShown}/>) : null
-        }
+        <Sidebar state={isShown} callBack={setIsShown}/>
         <Footer/>
     </div>
   )
