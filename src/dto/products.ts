@@ -7,4 +7,5 @@ export  interface productTypes{
     ratings: number,
     reviews ?: number,
     thumbnail?: string,
+    quantity?: number
 }

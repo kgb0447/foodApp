@@ -15,21 +15,8 @@ export default function CartPage() {
 
     useEffect(()=>{
       dispatch(setCartItem({}));
-      setCartToMap(getCartMatchFromProducts())
+      getDuplicateItems();
     },[])
-  
-    const getCartMatchFromProducts = () =>  {
-      let cartedItems: productTypes[] = [];
-      const testProd = products.map((item:productTypes) => item.id);
-
-      for(var i in cart){
-        if(testProd.indexOf(cart[i].food_id) > -1){
-          cartedItems.push(products[i]);
-        }
-      }
-      const cartItems =  cartedItems.filter((item:productTypes) => item !== undefined)
-      return cartItems
-    }
 
     const addQuantity = async (value : any) => {
       const newCartItem = {
@@ -48,20 +35,44 @@ export default function CartPage() {
     const removeItem = () => {
       console.log("...todo remove items")
     }
-    
+
+    const getDuplicateItems = () => {
+      let cartItemWithCount:any = {};
+        cart.forEach(function(i) {
+          cartItemWithCount[i.food_id] = (cartItemWithCount[i.food_id]||0) + 1;
+        });
+
+        const stringCartKeys = Object.keys(cartItemWithCount);
+        
+        let numberArray:any=[];
+        for (var i = 0; i < stringCartKeys.length; i++) numberArray.push(parseInt(stringCartKeys[i]));
+          
+        let arrayOfOrders = [];
+        const found = products.some((r:any)=>  numberArray.includes(r.id));
+        for(let i = 0; i < products.length; i++){
+            if(products.some((r:any)=>  numberArray.includes(r.id))){
+              arrayOfOrders.push(products[i]);
+            } else{
+            return arrayOfOrders
+          }
+        }
+
+        for(var i = 0; i < arrayOfOrders.length; i++){
+          setCartToMap(arrayOfOrders.map((item:any,index:number) => ({...item,quantity: Object.values(cartItemWithCount)[index]})))
+        }
+      }
+
   return (
     <div className={styles.cartWrapper}>
       <header>
         <BackBtn left={0} top={20}/>
         <h2>Cart</h2>
       </header>
-     
       {
         Array.isArray(cartToMap) ? 
         (cartToMap.map((item: productTypes) => (
           <div key={item.id} className={styles.items}>
             <AiOutlineClose className={styles.closeIcon} onClick={removeItem}/>
-            
             <img src="" alt="" />
             <div className={styles.itemInfo}>
               <h2>{item.name}</h2>
@@ -70,7 +81,7 @@ export default function CartPage() {
             </div>
             <div className={styles.quantityWrapper}>
               <button className={styles.minus}>-</button>
-              <div className={styles.quantity}>{cart.length}</div>
+              <div className={styles.quantity}>{item.quantity}</div>
               <button className={styles.add} onClick={()=>  addQuantity(item)}>+</button>
             </div>
           </div>  
