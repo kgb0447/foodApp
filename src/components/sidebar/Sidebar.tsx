@@ -34,7 +34,7 @@ export default function Sidebar({state,callBack}:SidebarTypes) {
             <ul className={styles.sidebarList}>
                 {
                     sidebarItems.map((item:sidebarItemTypes,index:number) => (
-                        <li className={styles.sidebarItem}>
+                        <li className={styles.sidebarItem} key={item.item + index}>
                             <img src={item.imgSrc} alt="" key={`${item} + ${index}`}/>
                             <span>{item.item}</span>
                         </li>
