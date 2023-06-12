@@ -1,0 +1,7 @@
+import blockContent from './blockContent'
+import category from './category'
+import restaurant from './restaurant'
+import dish from './dish'
+import feature from './feature'
+
+export const schemaTypes = [restaurant, dish, category, feature]

@@ -1,0 +1,31 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+
+.header{
+    width: 100%;
+    height: size(110);
+    background: #ffffff;
+    font-family: SofiaPro;
+    font-weight: 400;
+    font-size: size(18);
+    text-align: center;
+    color: $black_font_color;
+    padding: size(30) 0 0 0;
+
+    h2{
+        color: $black_font_color;
+        font-weight: 400;
+        font-size: size(18);
+        text-transform: capitalize;
+    }
+    .userAvatar{
+        position: absolute;
+        width: size(38);
+        height: size(38);
+        top: size(20);
+        right: size(30);
+        border-radius: size(10);
+        filter: drop-shadow(size(0) size(5) size(16) rgba(255, 197, 41, 0.3));
+    }
+}

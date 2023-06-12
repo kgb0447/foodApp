@@ -1,5 +1,40 @@
+@import '../../styles/functions.scss';
+@import '../../styles/variables.scss';
+
 .locationWrapper{
     width: 100%;
     height: 100dvh;
-    background: pink;
+    padding: 0 size(30);
+
+    .tabs{
+        display: flex;
+        width: 100%;
+        height: size(55);
+        border-radius: size(24);
+        justify-content: center;
+        align-items: center;
+        border: size(1) solid #F2EAEA;
+
+        .tabItems{
+            width: size(154);
+            height: size(47);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: size(24);
+            color: $main_theme_color;
+            background-color: #ffffff;
+            font-family: SofiaPro;
+            font-weight: 600;
+            text-transform: capitalize;
+
+           
+
+            &.active{
+                color: #ffffff;
+                background: #FE724C;
+                box-shadow: size(0) size(18) size(40) rgba(211, 209, 216, 0.251);
+            }
+        }
+    }
 }
