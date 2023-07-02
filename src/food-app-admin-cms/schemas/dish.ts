@@ -27,5 +27,16 @@ export default defineType({
       type: 'image',
       title: 'Image of the Dish',
     },
+    {
+      name: 'dish_category',
+      type: 'array',
+      title: 'Dish Category',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'category'}],
+        },
+      ],
+    },
   ],
 })

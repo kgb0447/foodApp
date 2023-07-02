@@ -3,10 +3,11 @@ import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./routes/routes";
 import Footer from "./components/footer/Footer";
-import sanityClient from "./food-app-cms/sanity";
+import { client } from "./client";
 
 function App() {
   const [isShow, setIsShow] = useState(false);
+  const [dishes, setDishes] = useState([]);
   useEffect(() => {
     setTimeout(() => {
       setIsShow(true);
@@ -19,17 +20,16 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const res = await sanityClient.fetch(
-        `*[_type == "dish"] {
+      const res = await client.fetch(
+        `*[_type == "restaurant"] {
           ...,
           }`
       );
-      console.log(res, "@@@@@@");
+      setDishes(res);
     })();
   }, []);
-  console.log("first");
   // const PATHS = ["/", "/signin", "/login", "/entry/signin", "entry/signup"];
-
+  console.log(dishes, "dishes");
   if (!isShow) {
     return (
       <img

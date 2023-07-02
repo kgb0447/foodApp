@@ -1,7 +1,8 @@
 import {defineField, defineType} from 'sanity'
+
 export default defineType({
   name: 'featured',
-  title: 'Featured Menu Category',
+  title: 'Featured',
   type: 'document',
   fields: [
     {
@@ -13,7 +14,7 @@ export default defineType({
     {
       name: 'short_description',
       type: 'string',
-      title: 'Short Description',
+      title: 'Food Description',
       validation: (Rule) => Rule.max(200),
     },
     {

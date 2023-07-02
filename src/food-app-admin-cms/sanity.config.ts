@@ -5,9 +5,9 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'food-app-cms',
+  title: 'food-app-admin-cms',
 
-  projectId: '1el70kpu',
+  projectId: 'bsy24y5i',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'category',
-  title: 'Menu Category',
+  title: 'Category',
   type: 'document',
   fields: [
     {
@@ -15,6 +15,17 @@ export default defineType({
       name: 'image',
       type: 'image',
       title: 'Image of Category',
+    },
+    {
+      name: 'dishes',
+      type: 'array',
+      title: 'Lists of Dish',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'dish'}],
+        },
+      ],
     },
   ],
 })

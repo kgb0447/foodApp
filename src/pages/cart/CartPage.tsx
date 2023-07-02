@@ -11,7 +11,9 @@ import styles from "./CartPage.module.scss";
 export default function CartPage() {
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state: RootState) => state.cart.cartItems);
-  const products = useAppSelector((state: RootState) => state.serviceAPI.data);
+  const products = useAppSelector(
+    (state: RootState) => state.serviceAPI.dishes
+  );
   const [cartToMap, setCartToMap] = useState<productTypes[]>([]);
 
   useEffect(() => {

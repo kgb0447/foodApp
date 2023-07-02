@@ -1,5 +1,5 @@
 {
-  "name": "food-app-cms",
+  "name": "food-app-admin-cms",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -15,8 +15,6 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/client": "^6.1.2",
-    "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

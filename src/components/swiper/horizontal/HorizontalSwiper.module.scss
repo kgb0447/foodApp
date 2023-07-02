@@ -1,163 +1,166 @@
-@import '../../../styles/fonts.scss';
-@import '../../../styles/functions.scss';
-@import '../../../styles/variables.scss';
+@import "../../../styles/fonts.scss";
+@import "../../../styles/functions.scss";
+@import "../../../styles/variables.scss";
 
+.swiperContainer {
+  position: relative;
+  margin-bottom: size(10);
+  width: 100dvw;
+  padding: 0;
 
-.swiperContainer{
-    position: relative;
-    margin-bottom: size(10);
-    width: 100dvw;
-    padding: 0;
+  .swiperHeader {
+    width: 100%;
+    height: size(26);
+    padding: 0 size(30);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: size(18);
 
-    .swiperHeader{
-        width: 100%;
-        height: size(26);
-        padding: 0 size(30);
-        display: flex;
-        justify-content: space-between;
-        font-weight: 600;
-        font-size: size(18);
-
-        h1{
-            color: $greeter_font_color;
-        }
-
-        .more{
-            position: relative;
-            color: $main_theme_color;
-            font-size: size(13);
-            margin-right: size(4);
-
-            &::after{
-                position: absolute;
-                top: size(4);
-                content: "";
-                background: url('../../../assets/img/icons/more_icon@2x.png');
-                background-size: cover;
-                width: size(8);
-                height: size(13);
-                margin-left: size(4);
-            }
-        }
-
+    h1 {
+      color: $greeter_font_color;
     }
 
-    .swiper{
-        margin-top: size(10);
-        padding: 0 size(18);
+    .more {
+      position: relative;
+      color: $main_theme_color;
+      font-size: size(13);
+      margin-right: size(4);
+
+      &::after {
+        position: absolute;
+        top: size(4);
+        content: "";
+        background: url("../../../assets/img/icons/more_icon@2x.png");
+        background-size: cover;
+        width: size(8);
+        height: size(13);
+        margin-left: size(4);
+      }
+    }
+  }
+
+  .swiper {
+    margin-top: size(10);
+    padding: 0 size(18);
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    // height: size(240);
+    background: yellow;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .swiperItems {
+      position: relative;
+      width: size(266);
+      height: size(229);
+      flex-shrink: 0;
+      margin-right: size(20);
+      background: #ffffff;
+      box-shadow: size(15) size(15) size(30) rgba(211, 209, 216, 0.25);
+      border-radius: size(15);
+
+      .itemDesc {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: size(102);
+        background: #ffffff;
+        border-radius: 0 0 size(20) size(20);
+        padding: 0 size(10);
+
+        .itemLabel {
+        }
+        p {
+          color: $description_font_color;
+        }
+      }
+      .itemCategories {
+        color: $category_text_color;
+        letter-spacing: -0.02em;
+
+        span {
+          background: #f6f6f6;
+          border-radius: size(5);
+          font-size: size(12);
+          margin-right: size(6);
+          text-transform: uppercase;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: size(266);
+        height: size(136);
+        object-fit: cover;
+        border-radius: size(15) size(15) 0 0;
+      }
+
+      .rateWrapper {
+        position: absolute;
+        top: size(10);
+        left: size(10);
+        width: size(80);
+        height: size(28);
+        padding: 0 size(5);
         display: flex;
-        flex-grow: 0;
         flex-shrink: 0;
-        width: 100%;
-        height:size(229);
-        background: yellow;
-        overflow-y: scroll;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: size(15);
+        background: #ffff;
 
-        .swiperItems{
-            position: relative;
-            width: size(266);
-            height: size(229);
-            flex-shrink: 0;
-            margin-right: size(20);
-            background: #FFFFFF;
-            box-shadow:size(15) size(15) size(30) rgba(211, 209, 216, 0.25);
-            border-radius: size(15);
-
-            .itemDesc{
-                position: absolute;
-                bottom: 0;
-                width:100%;
-                height: size(102);
-                background:#ffffff;
-                border-radius: 0 0 size(20) size(20);
-                padding: 0 size(10);
-                
-                .itemLabel{
-                    
-                }
-            }
-            .itemCategories{
-                color: $category_text_color;
-                letter-spacing: -0.02em;
-                
-                span{
-                    background: #F6F6F6;
-                    border-radius: size(5);
-                    font-size: size(12);
-                    margin-right: size(6);
-                    text-transform: uppercase;
-                }
-            }
-            
-
-            img{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: size(266);
-                height: size(136);
-                object-fit: cover;
-                border-radius: size(15) size(15) 0 0;
-            }
-
-            .rateWrapper{
-                position: absolute;
-                top: size(10);
-                left: size(10);
-                width: size(80);
-                height: size(28);
-                padding: 0 size(5);
-                display: flex;
-                flex-shrink: 0;
-                align-items: center;
-                justify-content: space-between;
-                border-radius: size(15);
-                background: #ffff;
-
-                .rate{
-                    color: #000000;
-                    font-size: size(11);
-                    font-weight: 600;
-                }
-
-                span{
-                    color: $lightgray_text;
-                    font-size: size(9);
-                    font-weight: 400;
-                    letter-spacing:size(2);
-                    margin-left: 4px;
-
-                    &::before{
-                        position: absolute;
-                        top: size(4);
-                        right: size(44);
-                        content: url('../../../assets/img/cards/start_icon@2x.png');
-                        width: size(10);
-                        height: size(10);
-                    }
-                }
-            }
-
-            .likeFood{
-                position: absolute;
-                top: size(10);
-                right: size(10);
-                width: size(28);
-                height: size(28);
-                background-color: $main_theme_color;
-                border: none;
-                border-radius: 50%;
-                box-shadow: 0px 7px 15px rgba(254, 114, 76, 0.4);
-
-                img{
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    width: size(15);
-                    height: size(15);
-                }
-            }
+        .rate {
+          color: #000000;
+          font-size: size(11);
+          font-weight: 600;
         }
+
+        span {
+          color: $lightgray_text;
+          font-size: size(9);
+          font-weight: 400;
+          letter-spacing: size(2);
+          margin-left: 4px;
+
+          &::before {
+            position: absolute;
+            top: size(4);
+            right: size(44);
+            content: url("../../../assets/img/cards/start_icon@2x.png");
+            width: size(10);
+            height: size(10);
+          }
+        }
+      }
+
+      .likeFood {
+        position: absolute;
+        top: size(10);
+        right: size(10);
+        width: size(28);
+        height: size(28);
+        background-color: $main_theme_color;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0px 7px 15px rgba(254, 114, 76, 0.4);
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: size(15);
+          height: size(15);
+        }
+      }
     }
+  }
 }

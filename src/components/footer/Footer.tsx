@@ -13,7 +13,7 @@ export default function Footer() {
 
   useEffect(() => {
     handleRoute(FOOTER_ITEMS[0]);
-  }, [handleRoute]);
+  }, []);
 
   function handleRoute(ele: any) {
     const selectedItem = FOOTER_ITEMS.filter((item: any) => item === ele);

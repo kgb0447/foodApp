@@ -1,48 +1,53 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/functions.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/helpers.scss";
 
-.categories{
-    position: relative;
-    width: size(344);
-    height: size(102);
-    margin:size(10) auto 0 auto;
-    @include flexNoShrink;
-    justify-content: flex-start;
-    overflow-x: auto;
-    color: #0000 !important;
-   
-    
-    
-    .categoryItems{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: size(6) 0;
-        margin-right: size(16);
-        width: size(59);
-        height: size(98);
-        text-align: center;
-        border-radius: size(100);
-        background-color: $theme_color_normal;
-        backdrop-filter: drop-shadow(0px 20px 30px rgba(254, 115, 76, 0.3));
-        flex-shrink: 0;
+.categoryWrapper {
+  position: relative;
+  width: 100%;
+  height: size(102);
+  margin: size(10) auto 0 auto;
+  padding: 0 0 0 $x_padding;
+  @include flexNoShrink;
+  justify-content: flex-start;
+  overflow-x: auto;
 
-            &:active{
-                background-color: $main_theme_color;
-            }
+  .categoryItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: size(6) 0;
+    margin-right: size(16);
+    width: size(60);
+    text-align: center;
+    border-radius: size(100);
+    background-color: $theme_color_normal;
+    backdrop-filter: drop-shadow(0px 20px 30px rgba(254, 115, 76, 0.3));
+    flex-shrink: 0;
 
-        &:last-child{
-            margin-right: 0;
-        }
+    &:active {
+      background-color: $main_theme_color;
 
-        img{
-            width: size(60);
-            height: size(60);
-        }
-        p{
-            color: $gray_text;
-            font-size: size(11);
-        }
+      p {
+        color: #fff;
+      }
+
+      img {
+        scale: 1.1;
+      }
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      width: size(60);
+      height: size(60);
+      border-radius: size(20);
+      transition: scale 0.2s ease;
+    }
+    p {
+      color: $gray_text;
+      font-size: size(11);
+    }
+  }
 }

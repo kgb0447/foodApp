@@ -1,23 +1,23 @@
-import { useNavigate } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../utils/hooks/redux/hooks';
-import { RootState } from '../../store/store';
-import { removeSpaces } from '../../utils/helpers';
-import { getActiveCategory } from '../../features/getServiceProperty/getServiceProperty';
-import styles from './styles.module.scss'
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../utils/hooks/redux/hooks";
+import { RootState } from "../../store/store";
+import { removeSpaces } from "../../utils/helpers";
+import { getActiveCategory } from "../../features/getServiceProperty/getServiceProperty";
+import styles from "./styles.module.scss";
+import { urlFor } from "../../client";
 
 export default function Categories() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const myCategories = useAppSelector((state: RootState) => state.serviceAPI.categories);
-  const data = useAppSelector((state:RootState) => state.serviceAPI.data)
-  
-  const handleSelect = (ele:any) => {
+  const categories = useAppSelector(
+    (state: RootState) => state.serviceAPI.categories
+  );
+  console.log(categories, "categories");
+  const handleSelect = (ele: any) => {
     // setActiveCat(ele.trim());
-    dispatch(getActiveCategory({data:data,value:ele}));
-    navigate(`/foodMenu/${ele.trim()}`)
-    
-  }
-  
+    // dispatch(getActiveCategory({ data: data, value: ele }));
+    navigate(`/foodMenu/${ele.trim()}`);
+  };
 
   // useEffect(() => {
   //   (()=>{
@@ -27,7 +27,7 @@ export default function Categories() {
   //     }
   //   })()
   // }, [categories])
-  
+
   // if(!categories){
   //   return <div> .... loading</div>
   // }
@@ -39,16 +39,17 @@ export default function Categories() {
   // console.log(category.toLowerCase(),"category")
 
   return (
-    <div className={styles.categories} style={{background:``}}>
-      {
-        myCategories.map((item:string,index:number) => (
-          <div className={styles.categoryItems} key={item+index} onClick={()=> handleSelect(item)}>
-            <img src={require(`../../assets/img/category/${removeSpaces(item)}_icon@2x.png`)} alt="" />
-            <p>{item}</p>
-          </div>
-        ))
-      }
-
+    <div className={styles.categoryWrapper}>
+      {categories?.map((item, index) => (
+        <div
+          className={styles.categoryItems}
+          key={item.name + index}
+          onClick={() => handleSelect(item.name)}
+        >
+          <img src={urlFor(item.image).url()} alt="" />
+          <p> {item.name}</p>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
