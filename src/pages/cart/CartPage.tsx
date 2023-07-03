@@ -90,7 +90,7 @@ export default function CartPage() {
             <img src="" alt="" />
             <div className={styles.itemInfo}>
               <h2>{item.name}</h2>
-              <p>{item.description}</p>
+              {/* <p>{item.description}</p> */}
               <p>${item.price}</p>
             </div>
             <div className={styles.quantityWrapper}>

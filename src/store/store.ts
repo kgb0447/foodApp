@@ -2,13 +2,14 @@ import {configureStore} from '@reduxjs/toolkit'
 import  serviceAPISliceReducer from '../features/serviceAPI/serviceAPISlice'
 import  getServicePropertySlice  from '../features/getServiceProperty/getServiceProperty'
 import cartFeatureSlice from '../features/cart/cartFeature'
+import activeServiceSlice from '../features/serviceAPI/activeServiceSlice'
 
 export const store = configureStore({
     reducer: {
         serviceAPI: serviceAPISliceReducer,
         getServiceProps: getServicePropertySlice,
-        cart: cartFeatureSlice
-        
+        cart: cartFeatureSlice,
+        activeProduct: activeServiceSlice
     }
 })
 

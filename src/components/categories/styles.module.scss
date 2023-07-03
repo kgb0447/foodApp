@@ -22,6 +22,7 @@
     background-color: $theme_color_normal;
     backdrop-filter: drop-shadow(0px 20px 30px rgba(254, 115, 76, 0.3));
     flex-shrink: 0;
+    object-fit: cover;
 
     &:active {
       background-color: $main_theme_color;

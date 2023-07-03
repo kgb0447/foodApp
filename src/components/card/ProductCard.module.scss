@@ -33,6 +33,7 @@
             img{
                 width:100%;
                 height: size(165);
+                object-fit: cover;
                 border-radius: size(18);
                 outline: inset red 1px;
             }

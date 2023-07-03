@@ -12,10 +12,13 @@ const initialState: serviceAPITypes = {
 export const getData = createAsyncThunk("getData", async () => {
   const res = await client.fetch(
     `{
-      'categories': *[_type in ["category"]] {
-          image,
-          dishes,
+      'categories': *[_type == "category"]{
           name,
+          image,
+          dishes[]->,
+          name,
+          price,
+          short_description         
       },
       'dishes': *[_type in ["dish"]] {
           image,

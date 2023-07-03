@@ -1,11 +1,11 @@
 export interface productTypes {
   id: number;
   name: string;
-  description: string;
+  short_description: string;
   categories?: string[];
   price: number;
   ratings: number;
   reviews?: number;
-  thumbnail?: string;
+  image?: string;
   quantity?: number;
 }

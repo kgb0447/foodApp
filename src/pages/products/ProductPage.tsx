@@ -1,36 +1,40 @@
 import { useState } from "react";
 import ProductCard from "../../components/card/ProductCard";
-import ProductModal from "../../components/modal/ProductModal";
 import { RootState } from "../../store/store";
 import { useAppSelector } from "../../utils/hooks/redux/hooks";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { productTypes } from "../../dto/products";
 import styles from "./ProductPage.module.scss";
 
 export default function ProductPage() {
+  const selectedCategory = useAppSelector((state:RootState) => state.activeProduct.active_category)
+  const isLoading = useAppSelector((state:RootState) => state.activeProduct.isLoading)
+
   const navigate = useNavigate();
-  const { id } = useParams();
   const activeCategory = useAppSelector(
     (state: RootState) => state.getServiceProps.activeCategory
   );
   const [isSelected, setIsSelected] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
-  const dishes = useAppSelector((state: RootState) => state.serviceAPI?.dishes);
   const handleClose = () => {
     const PREV_PAGE: number = -1;
     navigate(PREV_PAGE);
   };
-
+  console.log(selectedCategory,"selectedCategory")
   const handleSelect = (val: any) => {
     setIsSelected(true);
     setSelectedItem(activeCategory.filter((item: any) => item === val)[0]);
   };
+
+  if(isLoading) {
+    return <h1>...Loading</h1>
+  }
   return (
     <div className={styles.productPageWrapper}>
       <header>
-        <h2>{id?.toLocaleUpperCase()}</h2>
+        <h2>{selectedCategory.name.toLocaleUpperCase()}</h2>
         <p>
-          {activeCategory.length} types of {id?.toLocaleUpperCase()}
+          {selectedCategory?.dishes?.length} types of {selectedCategory.name}
         </p>
       </header>
       <div className={styles.close} onClick={handleClose}>
@@ -39,14 +43,14 @@ export default function ProductPage() {
           alt=""
         />
       </div>
-      {activeCategory.map((item: productTypes) => (
+      {selectedCategory.dishes.map((item: productTypes) => (
         <div key={item.id} onClick={() => handleSelect(item)}>
           <ProductCard data={item} />
         </div>
       ))}
-      {isSelected ? (
+      {/* {isSelected ? (
         <ProductModal callback={setIsSelected} item={selectedItem} />
-      ) : null}
+      ) : null} */}
     </div>
   );
 }
